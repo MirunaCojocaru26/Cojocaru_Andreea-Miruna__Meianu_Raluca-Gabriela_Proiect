@@ -1,0 +1,6 @@
+<resources>
+    <dimen name="margin">6dp</dimen>
+    <dimen name="middle">160dp</dimen>
+    <dimen name="align">50dp</dimen>
+    <dimen name="padding">10dp</dimen>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBej">
+    <fragment
+        android:id="@+id/chronometer_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="com.example.sudoku.ChronometerFragment"/>
+    <fragment
+        android:id="@+id/game_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="com.example.sudoku.GridFragment"/>
+    <fragment
+        android:id="@+id/number_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="com.example.sudoku.NumbersFragment"/>
+</LinearLayout>
