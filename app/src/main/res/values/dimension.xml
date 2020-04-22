@@ -3,4 +3,8 @@
     <dimen name="middle">160dp</dimen>
     <dimen name="align">50dp</dimen>
     <dimen name="padding">10dp</dimen>
+    <dimen name="padding_grid">3dp</dimen>
+    <dimen name="number_button_weigh">80dp</dimen>
+    <dimen name="number_write">25sp</dimen>
+    <dimen name="grid_number_write">30sp</dimen>
 </resources>
