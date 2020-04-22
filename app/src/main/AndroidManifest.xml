@@ -16,6 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".GameActivity"/>
+        <activity android:name=".SettingsActivity"/>
         <activity android:name=".ChooseDifficultyFragment"/>
         <activity android:name=".NumbersFragment"/>
         <activity android:name=".ChronometerFragment"/>
