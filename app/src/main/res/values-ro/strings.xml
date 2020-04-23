@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sudoku</string>
+
+    <string name="sync_pref">Muzica</string>
+    <string name="sync_pref_summary">Porneste/Opreste muzica de fundal</string>
+
+
+    <string name="title_language">Limba</string>
+    <string name="default_value_languege">en</string>
+    <string name="summary_language">Alege o limba </string>
+
+    <string name="title_theme">Tematica</string>
+    <string name="default_value_theme">inchis</string>
+    <string name="summary_theme">Alege tema</string>
+
+    <string name="button_play">Start</string>
+    <string name="button_scors">Scoruri</string>
+    <string name="button_connect">Conectați-vă</string>
+
+
+    <string name="easy">Usor</string>
+    <string name="meddium">Mediu</string>
+    <string name="hard">Greu</string>
+
+</resources>

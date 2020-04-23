@@ -9,29 +9,37 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     public static final String MyPREFERENCES = "MyPrefs" ;
     public static final String Music = "music";
+    public static final String Language = "lang";
+    public static final String Theme = "theme";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Main");
         SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        //setAppLocale(sharedPreferences.getString(Language,""));
         System.out.println(sharedPreferences.getString(Music,""));
         if(sharedPreferences.getString(Music,"").equals("true")){
             if (!isMyServiceRunning(service.class)) {
                 startService(new Intent(MainActivity.this, service.class));
             }
         }
+        setContentView(R.layout.activity_main);
         findViewById(R.id.btn_playgame).setOnClickListener(this);
-
     }
 
     @Override
@@ -66,6 +74,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         return false;
     }
+
+
 
 
 

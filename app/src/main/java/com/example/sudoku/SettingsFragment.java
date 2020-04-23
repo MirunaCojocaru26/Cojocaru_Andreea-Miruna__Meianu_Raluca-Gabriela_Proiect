@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
@@ -11,11 +12,14 @@ import android.preference.SwitchPreference;
 
 import androidx.annotation.Nullable;
 
+import static com.example.sudoku.MainActivity.Language;
 import static com.example.sudoku.MainActivity.Music;
 import static com.example.sudoku.MainActivity.MyPREFERENCES;
+import static com.example.sudoku.MainActivity.Theme;
 
 public class SettingsFragment extends PreferenceFragment {
     SwitchPreference music,sound;
+    ListPreference language, theme;
     SharedPreferences settings;
 
     @Override
@@ -23,8 +27,42 @@ public class SettingsFragment extends PreferenceFragment {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.preferences);
         settings = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        music = (SwitchPreference) getPreferenceScreen().findPreference("check_music");
         settings = this.getActivity().getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+
+
+        language = (ListPreference)getPreferenceScreen().findPreference("key_language");
+        language.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                String language = newValue.toString();
+                SharedPreferences.Editor editor = settings.edit();
+                editor.putString(Language, language);
+                editor.apply();
+                getActivity().finish();
+                Intent intent = new Intent(getActivity(), SettingsActivity.class);
+                startActivity(intent);
+                return true;
+            }
+        });
+
+        theme = (ListPreference)getPreferenceScreen().findPreference("key_theme");
+        theme.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                String theme_value = newValue.toString();
+                SharedPreferences.Editor editor = settings.edit();
+                editor.putString(Theme, theme_value);
+                editor.apply();
+                getActivity().finish();
+                Intent intent = new Intent(getActivity(), SettingsActivity.class);
+                startActivity(intent);
+                return true;
+            }
+        });
+
+
+
+        music = (SwitchPreference) getPreferenceScreen().findPreference("check_music");
         music.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
             @Override
             public boolean onPreferenceChange(Preference preference, Object newValue) {

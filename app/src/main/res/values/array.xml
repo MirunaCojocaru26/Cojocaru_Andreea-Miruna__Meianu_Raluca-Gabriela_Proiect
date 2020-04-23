@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="language_name">
+        <item>English</item>
+        <item>Romanian</item>
+        <item>French</item>
+    </string-array>
+    <string-array name="language_value">
+        <item>en</item>
+        <item>ro</item>
+        <item>fr</item>
+    </string-array>
+    <string-array name="theme_array_name">
+        <item>Dark</item>
+        <item>Red</item>
+    </string-array>
+    <string-array name="theme_array_value">
+        <item>dark</item>
+        <item>red</item>
+    </string-array>
+</resources>

@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/button_difficulty_shape"
-        android:text="Easy"
+        android:text="@string/easy"
         android:layout_marginTop="@dimen/margin"
         android:layout_marginRight="@dimen/align"
         android:layout_marginLeft="@dimen/align"></Button>
@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/button_difficulty_shape"
-        android:text="Meddium"
+        android:text="@string/meddium"
         android:layout_marginTop="@dimen/margin"
         android:layout_marginRight="@dimen/align"
         android:layout_marginLeft="@dimen/align"></Button>
@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/button_difficulty_shape"
-        android:text="Hard"
+        android:text="@string/hard"
         android:layout_marginTop="@dimen/margin"
         android:layout_marginRight="@dimen/align"
         android:layout_marginLeft="@dimen/align"></Button>
