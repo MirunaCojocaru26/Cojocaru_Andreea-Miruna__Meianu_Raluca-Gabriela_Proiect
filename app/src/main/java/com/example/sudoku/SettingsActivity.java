@@ -1,21 +1,11 @@
 package com.example.sudoku;
-
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.media.MediaPlayer;
+import android.app.ActivityManager;
+import android.content.Context;
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
-import android.preference.PreferenceManager;
-import android.view.View;
-
-import androidx.annotation.IntRange;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-
-
 public class SettingsActivity extends AppCompatActivity {
-    MediaPlayer song;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,16 +16,14 @@ public class SettingsActivity extends AppCompatActivity {
             getFragmentManager().beginTransaction().add(R.id.fragment_container, new SettingsFragment()).commit();
         }
     }
-    public void playMusic(View view){
-        if(song == null) {
-            song = MediaPlayer.create(this, R.raw.sound);
-            song.start();
+    public boolean isMyServiceRunning(Class<?> serviceClass) {
+        ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
+            if (serviceClass.getName().equals(service.service.getClassName())) {
+                return true;
+            }
         }
-    }
-    public void stopMusic(View view){
-        song.stop();
-        song = null;
-
+        return false;
     }
 
 }

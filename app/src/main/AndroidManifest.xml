@@ -18,9 +18,9 @@
         <activity android:name=".GameActivity"/>
         <activity android:name=".SettingsActivity"/>
         <activity android:name=".ChooseDifficultyFragment"/>
-        <activity android:name=".NumbersFragment"/>
         <activity android:name=".ChronometerFragment"/>
         <activity android:name=".GridFragment"/>
+        <service android:name = ".service"/>
     </application>
 
 </manifest>
