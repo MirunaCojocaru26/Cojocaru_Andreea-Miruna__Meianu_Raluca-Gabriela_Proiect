@@ -12,6 +12,7 @@ import android.preference.SwitchPreference;
 
 import androidx.annotation.Nullable;
 
+import static com.example.sudoku.MainActivity.Change;
 import static com.example.sudoku.MainActivity.Language;
 import static com.example.sudoku.MainActivity.Music;
 import static com.example.sudoku.MainActivity.MyPREFERENCES;
@@ -37,10 +38,12 @@ public class SettingsFragment extends PreferenceFragment {
                 String language = newValue.toString();
                 SharedPreferences.Editor editor = settings.edit();
                 editor.putString(Language, language);
+                editor.putString(Change,"true");
                 editor.apply();
                 getActivity().finish();
                 Intent intent = new Intent(getActivity(), SettingsActivity.class);
                 startActivity(intent);
+
                 return true;
             }
         });
@@ -52,9 +55,11 @@ public class SettingsFragment extends PreferenceFragment {
                 String theme_value = newValue.toString();
                 SharedPreferences.Editor editor = settings.edit();
                 editor.putString(Theme, theme_value);
+                editor.putString(Change,"true");
                 editor.apply();
                 getActivity().finish();
-                Intent intent = new Intent(getActivity(), SettingsActivity.class);
+                Intent intent = getActivity().getIntent();
+//                Intent intent = new Intent(getActivity(), SettingsActivity.class);
                 startActivity(intent);
                 return true;
             }

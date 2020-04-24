@@ -1,12 +1,14 @@
 package com.example.sudoku;
 import android.app.ActivityManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.KeyEvent;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,10 +19,11 @@ import static com.example.sudoku.MainActivity.Language;
 import static com.example.sudoku.MainActivity.MyPREFERENCES;
 import static com.example.sudoku.MainActivity.Theme;
 
+
 public class SettingsActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         String value_theme = sharedPreferences.getString(Theme,"");
         switch (value_theme){
@@ -31,6 +34,7 @@ public class SettingsActivity extends AppCompatActivity {
                 setTheme(R.style.AppTheme1);
                 break;
         }
+        super.onCreate(savedInstanceState);
         setAppLocale(sharedPreferences.getString(Language,""));
         setContentView(R.layout.activity_settings);
         if(findViewById(R.id.fragment_container) != null){
@@ -60,4 +64,9 @@ public class SettingsActivity extends AppCompatActivity {
         }
         resources.updateConfiguration(config, dm);
     }
+
+
+
+
+
 }

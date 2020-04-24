@@ -25,13 +25,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static final String Music = "music";
     public static final String Language = "lang";
     public static final String Theme = "theme";
+    public static final String Change = "change";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        String value_theme = sharedPreferences.getString(Theme,"");
+        switch (value_theme){
+            case "dark":
+                setTheme(R.style.AppTheme);
+                break;
+            case "red":
+                setTheme(R.style.AppTheme1);
+                break;
+        }
         super.onCreate(savedInstanceState);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Main");
-        SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-        //setAppLocale(sharedPreferences.getString(Language,""));
         System.out.println(sharedPreferences.getString(Music,""));
         if(sharedPreferences.getString(Music,"").equals("true")){
             if (!isMyServiceRunning(service.class)) {
@@ -40,6 +49,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         setContentView(R.layout.activity_main);
         findViewById(R.id.btn_playgame).setOnClickListener(this);
+    }
+
+    @Override
+    protected void onStart() {
+        System.out.println("intru in onStart");
+        SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        String change = sharedPreferences.getString(Change,"");
+        if(change.equals("true")){
+            System.out.println("intra in if");
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(Change, "false");
+            editor.apply();
+            finish();
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
+        super.onStart();
     }
 
     @Override
@@ -75,8 +101,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return false;
     }
 
-
-
-
-
+    private void setAppLocale(String localeCode){
+        Resources resources = getResources();
+        DisplayMetrics dm = resources.getDisplayMetrics();
+        Configuration config = resources.getConfiguration();
+        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.JELLY_BEAN_MR1){
+            config.setLocale(new Locale(localeCode.toLowerCase()));
+        } else {
+            config.locale = new Locale(localeCode.toLowerCase());
+        }
+        resources.updateConfiguration(config, dm);
+    }
 }
