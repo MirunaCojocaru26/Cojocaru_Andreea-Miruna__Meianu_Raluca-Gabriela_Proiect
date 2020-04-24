@@ -20,4 +20,8 @@
     <string name="meddium">Meddium</string>
     <string name="hard">Hard</string>
     <string name="list_times">List times</string>
+
+    <string name="congratulations">Congratulations!</string>
+    <string name="completed_time">Completed time:</string>
+    <string name="back">Back</string>
 </resources>

@@ -1,7 +1,9 @@
 package com.example.sudoku;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -10,9 +12,22 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
+import static com.example.sudoku.MainActivity.MyPREFERENCES;
+import static com.example.sudoku.MainActivity.Theme;
+
 public class PopupActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        String value_theme = sharedPreferences.getString(Theme,"");
+        switch (value_theme){
+            case "dark":
+                setTheme(R.style.AppTheme);
+                break;
+            case "red":
+                setTheme(R.style.AppTheme1);
+                break;
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.popup_window);
 

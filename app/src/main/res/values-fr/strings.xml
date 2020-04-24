@@ -20,5 +20,10 @@
     <string name="easy">Facile</string>
     <string name="meddium">Meddium</string>
     <string name="hard">Difficile</string>
-    <string name="list_times">List times?????</string>
+
+    <string name="list_times">Répertorier les heures</string>
+
+    <string name="congratulations">Toutes nos félicitations!</string>
+    <string name="completed_time">Temps terminé:</string>
+    <string name="back">Retour</string>
 </resources>

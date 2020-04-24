@@ -23,6 +23,10 @@
     <string name="meddium">Mediu</string>
     <string name="hard">Greu</string>
 
-    <string name="list_times">List times???????</string>
+    <string name="list_times">Lista timp</string>
+
+    <string name="congratulations">Felicitari!</string>
+    <string name="completed_time">Timp:</string>
+    <string name="back">Inapoi</string>
 
 </resources>
