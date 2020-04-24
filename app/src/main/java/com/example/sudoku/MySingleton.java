@@ -2,9 +2,7 @@ package com.example.sudoku;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-
 import androidx.collection.LruCache;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;

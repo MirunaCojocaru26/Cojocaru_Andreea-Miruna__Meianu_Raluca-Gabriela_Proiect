@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
-
 import static com.example.sudoku.MainActivity.MyPREFERENCES;
 import static com.example.sudoku.MainActivity.Theme;
 

@@ -9,9 +9,7 @@ import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.SwitchPreference;
-
 import androidx.annotation.Nullable;
-
 import static com.example.sudoku.MainActivity.Change;
 import static com.example.sudoku.MainActivity.Language;
 import static com.example.sudoku.MainActivity.Music;

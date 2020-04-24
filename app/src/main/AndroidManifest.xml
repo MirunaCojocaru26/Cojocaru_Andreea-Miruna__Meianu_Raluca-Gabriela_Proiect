@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.sudoku">
     <uses-feature
         android:name="android.hardware.sensor.compass"
         android:required="true" />
+
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -20,15 +23,31 @@
         </activity>
         <activity android:name=".GameActivity"/>
         <activity android:name=".SettingsActivity"/>
-        <activity android:name=".RulesActivity"/>
         <activity android:name=".TimeActivity"/>
         <activity android:name=".PopupActivity"
             android:theme="@style/AppTheme.CustomTheme"/>
+        <activity android:name=".ConnectActivity"/>
         <activity android:name=".ChooseDifficultyFragment"/>
         <activity android:name=".ChronometerFragment"/>
         <activity android:name=".GridFragment"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="@string/fb_login_protocol_scheme"
+                    tools:ignore="ManifestResource" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
         <service android:name = ".service"/>
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
 </manifest>

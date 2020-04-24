@@ -35,7 +35,8 @@ public class GridFragment extends Fragment {
         Random random = new Random();
         switch (difficulty) {
             case 1: {
-                k = 50 + random.nextInt(10);
+                //k = 50 + random.nextInt(10);
+                k=80;
                 break;
             }
             case 2: {

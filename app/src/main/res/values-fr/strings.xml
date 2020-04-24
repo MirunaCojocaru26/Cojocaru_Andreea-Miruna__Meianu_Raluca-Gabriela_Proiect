@@ -33,4 +33,6 @@
     <string name="don_t_guess">Ne devinez pas</string>
     <string name="use_process_of_elimination">Utiliser le processus élimination</string>
 
+    <string name="facebook_app_id">636261623896661</string>
+    <string name="fb_login_protocol_scheme">fb636261623896661</string>
 </resources>

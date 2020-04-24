@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBej">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="@dimen/photo_facebook"
+        android:layout_height="@dimen/photo_facebook"
+        android:layout_gravity="center_horizontal"
+        android:id = "@+id/profil_pic"
+        android:layout_marginTop="@dimen/align"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/number_write"
+        android:layout_marginTop="@dimen/align"
+        android:id="@+id/profile_name"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/number_write"
+        android:layout_marginTop="@dimen/align"
+        android:id="@+id/email_connect"/>
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>

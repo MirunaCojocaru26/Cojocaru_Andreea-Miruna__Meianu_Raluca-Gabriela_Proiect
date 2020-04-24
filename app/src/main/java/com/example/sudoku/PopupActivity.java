@@ -32,7 +32,7 @@ public class PopupActivity extends Activity {
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int width = displayMetrics.widthPixels;
         int height = displayMetrics.heightPixels;
-        getWindow().setLayout((int)(width*.8),(int)(height*.4));
+        getWindow().setLayout((int)(width*.8),(int)(height*.5));
 
         findViewById(R.id.pop_up_btn).setOnClickListener(new View.OnClickListener() {
             @Override

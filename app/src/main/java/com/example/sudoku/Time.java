@@ -3,9 +3,7 @@ package com.example.sudoku;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-
 import java.io.Serializable;
-import java.sql.Date;
 
 @Entity
 public class Time implements Serializable {

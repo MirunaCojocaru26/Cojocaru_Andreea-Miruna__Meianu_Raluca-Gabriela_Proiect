@@ -1,7 +1,6 @@
 package com.example.sudoku;
 
 import android.content.Context;
-
 import androidx.room.Room;
 
 public class DatabaseClient {
