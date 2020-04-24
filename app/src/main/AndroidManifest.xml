@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".GameActivity"/>
         <activity android:name=".SettingsActivity"/>
+        <activity android:name=".RulesActivity"/>
         <activity android:name=".TimeActivity"/>
         <activity android:name=".PopupActivity"
             android:theme="@style/AppTheme.CustomTheme"/>
@@ -28,5 +29,6 @@
         <activity android:name=".GridFragment"/>
         <service android:name = ".service"/>
     </application>
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 </manifest>

@@ -24,4 +24,10 @@
     <string name="congratulations">Congratulations!</string>
     <string name="completed_time">Completed time:</string>
     <string name="back">Back</string>
+
+    <string name="sudoku_rules">Sudoku rules</string>
+    <string name="use_numbers_1_9">Use Numbers 1-9</string>
+    <string name="don_t_repeat_any_numbers">Don’t Repeat Any Numbers</string>
+    <string name="don_t_guess">Don’t Guess</string>
+    <string name="use_process_of_elimination">Use Process of Elimination</string>
 </resources>
