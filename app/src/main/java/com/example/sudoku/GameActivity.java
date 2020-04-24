@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import static com.example.sudoku.MainActivity.MyPREFERENCES;
 import static com.example.sudoku.MainActivity.Theme;
@@ -24,5 +25,12 @@ public class GameActivity extends AppCompatActivity {
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+    }
+
+    public void acces_the_chronometer()
+    {
+        FragmentManager fm = getSupportFragmentManager();
+        ChronometerFragment fragment = (ChronometerFragment) fm.findFragmentById(R.id.chronometer_fragment);
+        fragment.stop_chronometer();
     }
 }

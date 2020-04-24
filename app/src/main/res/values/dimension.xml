@@ -7,4 +7,5 @@
     <dimen name="number_button_weigh">80dp</dimen>
     <dimen name="number_write">25sp</dimen>
     <dimen name="grid_number_write">30sp</dimen>
+    <dimen name="pop_up_text">40sp</dimen>
 </resources>

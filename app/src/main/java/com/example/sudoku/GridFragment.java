@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import java.util.Random;
 
@@ -207,7 +206,9 @@ public class GridFragment extends Fragment {
     //verify if the game is completed
     void game_end() {
         if(verify_line() & verify_column() & verify_3x3grid())
-            Toast.makeText(getContext(),"bravoo!",Toast.LENGTH_SHORT);
+        {
+            ((GameActivity)getActivity()).acces_the_chronometer();
+        }
     }
 
     //take every single line and verify to not have same numbers
