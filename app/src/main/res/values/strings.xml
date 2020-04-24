@@ -19,4 +19,5 @@
     <string name="easy">Easy</string>
     <string name="meddium">Meddium</string>
     <string name="hard">Hard</string>
+    <string name="list_times">List times</string>
 </resources>

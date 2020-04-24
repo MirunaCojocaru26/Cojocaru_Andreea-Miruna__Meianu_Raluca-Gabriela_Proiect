@@ -48,6 +48,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
         setContentView(R.layout.activity_main);
+        findViewById(R.id.btn_scors).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TimeActivity.class);
+                startActivity(intent);
+            }
+        });
         findViewById(R.id.btn_playgame).setOnClickListener(this);
     }
 
