@@ -1,614 +1,778 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorBej">
+    android:background="@color/colorBej"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="1"
+        app:layout_constraintGuide_begin="20dp" />
 
     <GridLayout
-        android:layout_width="match_parent"
+        android:id="@+id/gred_table"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:columnCount="3"
-        android:id="@+id/gred_table"
-        android:rowCount="3">
+        android:rowCount="3"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        tools:ignore="MissingConstraints">
+
         <TableLayout
-            android:layout_width="135dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/padding_grid">
-            <TableRow
-                android:layout_width="match_parent">
+
+            <TableRow android:layout_width="match_parent">
+
                 <TextView
-                    android:text=""
+                    android:background="@drawable/cell_shape"
                     android:tag="line1column1"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line1column2"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line1column3"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-            </TableRow>
-            <TableRow
-                android:layout_width="match_parent">
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+            </TableRow>
+
+            <TableRow android:layout_width="match_parent">
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line2column1"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line2column2"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line2column3"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-            </TableRow>
-            <TableRow
-                android:layout_width="match_parent">
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+            </TableRow>
+
+            <TableRow android:layout_width="match_parent">
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line3column1"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line3column2"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line3column3"
-                    android:textSize="@dimen/grid_number_write"
+                    android:text=""
                     android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
+                    android:textSize="@dimen/grid_number_write" />
             </TableRow>
         </TableLayout>
+
         <TableLayout
-            android:layout_width="135dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/padding_grid">
+
             <TableRow>
+
                 <TextView
-                    android:text=""
+                    android:background="@drawable/cell_shape"
                     android:tag="line1column4"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line1column5"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line1column6"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-            </TableRow>
-            <TableRow>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line2column4"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line2column5"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line2column6"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-            </TableRow>
-            <TableRow>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line3column4"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line3column5"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line3column6"
-                    android:textSize="@dimen/grid_number_write"
+                    android:text=""
                     android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
+                    android:textSize="@dimen/grid_number_write" />
             </TableRow>
         </TableLayout>
+
         <TableLayout
-            android:layout_width="135dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/padding_grid">
+
             <TableRow>
+
                 <TextView
-                    android:text=""
+                    android:background="@drawable/cell_shape"
                     android:tag="line1column7"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line1column8"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line1column9"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-            </TableRow>
-            <TableRow>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line2column7"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line2column8"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line2column9"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-            </TableRow>
-            <TableRow>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line3column7"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line3column8"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line3column9"
-                    android:textSize="@dimen/grid_number_write"
+                    android:text=""
                     android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
+                    android:textSize="@dimen/grid_number_write" />
             </TableRow>
         </TableLayout>
+
         <TableLayout
-            android:layout_width="135dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/padding_grid">
+
             <TableRow>
+
                 <TextView
-                    android:text=""
+                    android:background="@drawable/cell_shape"
                     android:tag="line4column1"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line4column2"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line4column3"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-            </TableRow>
-            <TableRow>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line5column1"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line5column2"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line5column3"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-            </TableRow>
-            <TableRow>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line6column1"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line6column2"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line6column3"
-                    android:textSize="@dimen/grid_number_write"
+                    android:text=""
                     android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
+                    android:textSize="@dimen/grid_number_write" />
             </TableRow>
         </TableLayout>
+
         <TableLayout
-            android:layout_width="135dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/padding_grid">
+
             <TableRow>
+
                 <TextView
-                    android:text=""
+                    android:background="@drawable/cell_shape"
                     android:tag="line4column4"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line4column5"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line4column6"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-            </TableRow>
-            <TableRow>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line5column4"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line5column5"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line5column6"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-            </TableRow>
-            <TableRow>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line6column4"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line6column5"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line6column6"
-                    android:textSize="@dimen/grid_number_write"
+                    android:text=""
                     android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
+                    android:textSize="@dimen/grid_number_write" />
             </TableRow>
         </TableLayout>
+
         <TableLayout
-            android:layout_width="135dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/padding_grid">
+
             <TableRow>
+
                 <TextView
-                    android:text=""
+                    android:background="@drawable/cell_shape"
                     android:tag="line4column7"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line4column8"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line4column9"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-            </TableRow>
-            <TableRow>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line5column7"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line5column8"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line5column9"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-            </TableRow>
-            <TableRow>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line6column7"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line6column8"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line6column9"
-                    android:textSize="@dimen/grid_number_write"
+                    android:text=""
                     android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
+                    android:textSize="@dimen/grid_number_write" />
             </TableRow>
         </TableLayout>
+
         <TableLayout
-            android:layout_width="135dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/padding_grid">
+
             <TableRow>
+
                 <TextView
-                    android:text=""
+                    android:background="@drawable/cell_shape"
                     android:tag="line7column1"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line7column2"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line7column3"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-            </TableRow>
-            <TableRow>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line8column1"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line8column2"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line8column3"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-            </TableRow>
-            <TableRow>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line9column1"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line9column2"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line9column3"
-                    android:textSize="@dimen/grid_number_write"
+                    android:text=""
                     android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
+                    android:textSize="@dimen/grid_number_write" />
             </TableRow>
         </TableLayout>
+
         <TableLayout
-            android:layout_width="135dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/padding_grid">
+
             <TableRow>
+
                 <TextView
-                    android:text=""
+                    android:background="@drawable/cell_shape"
                     android:tag="line7column4"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line7column5"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line7column6"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-            </TableRow>
-            <TableRow>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line8column4"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line8column5"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line8column6"
-                    android:textSize="@dimen/grid_number_write"
+                    android:text=""
                     android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
+                    android:textSize="@dimen/grid_number_write" />
             </TableRow>
+
             <TableRow>
+
                 <TextView
-                    android:text=""
+                    android:background="@drawable/cell_shape"
                     android:tag="line9column4"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line9column5"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
-                    android:tag="line9column6"
-                    android:textSize="@dimen/grid_number_write"
                     android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
+                    android:tag="line9column6"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
             </TableRow>
         </TableLayout>
+
         <TableLayout
-            android:layout_width="135dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/padding_grid">
+
             <TableRow>
+
                 <TextView
-                    android:text=""
+                    android:background="@drawable/cell_shape"
                     android:tag="line7column7"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line7column8"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line7column9"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-            </TableRow>
-            <TableRow>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line8column7"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line8column8"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line8column9"
-                    android:textSize="@dimen/grid_number_write"
+                    android:text=""
                     android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
+                    android:textSize="@dimen/grid_number_write" />
             </TableRow>
+
             <TableRow>
+
                 <TextView
-                    android:text=""
+                    android:background="@drawable/cell_shape"
                     android:tag="line9column7"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
                     android:tag="line9column8"
-                    android:textSize="@dimen/grid_number_write"
-                    android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
-                <TextView
                     android:text=""
-                    android:tag="line9column9"
-                    android:textSize="@dimen/grid_number_write"
                     android:textAlignment="center"
-                    android:background="@drawable/cell_shape"/>
+                    android:textSize="@dimen/grid_number_write" />
+
+                <TextView
+                    android:background="@drawable/cell_shape"
+                    android:tag="line9column9"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textSize="@dimen/grid_number_write" />
             </TableRow>
         </TableLayout>
     </GridLayout>
 
     <GridLayout
-        android:layout_width="match_parent"
+        android:id="@+id/gridLayout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/gred_table"
         android:layout_alignParentBottom="true"
-        android:paddingTop="@dimen/padding"
         android:columnCount="5"
-        android:rowCount="2">
+        android:paddingTop="@dimen/padding"
+        android:rowCount="2"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline5"
+        tools:ignore="MissingConstraints">
 
         <Button
             android:id="@+id/btn_number_one"
@@ -700,4 +864,4 @@
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/number_write" />
     </GridLayout>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

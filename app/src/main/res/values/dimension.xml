@@ -4,8 +4,9 @@
     <dimen name="align">50dp</dimen>
     <dimen name="padding">10dp</dimen>
     <dimen name="padding_grid">3dp</dimen>
-    <dimen name="number_button_weigh">80dp</dimen>
-    <dimen name="number_write">25sp</dimen>
-    <dimen name="grid_number_write">30sp</dimen>
+    <dimen name="number_button_weigh">60dp</dimen>
+    <dimen name="number_write">20sp</dimen>
+    <dimen name="grid_number_write">20sp</dimen>
     <dimen name="pop_up_text">40sp</dimen>
+    <dimen name="photo_facebook">175dp</dimen>
 </resources>
