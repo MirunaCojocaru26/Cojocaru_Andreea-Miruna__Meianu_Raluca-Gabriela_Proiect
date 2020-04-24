@@ -23,6 +23,16 @@
     <string name="meddium">Mediu</string>
     <string name="hard">Greu</string>
 
-    <string name="list_times">List times???????</string>
+    <string name="list_times">Lista timp</string>
+
+    <string name="congratulations">Felicitari!</string>
+    <string name="completed_time">Timp:</string>
+    <string name="back">Inapoi</string>
+
+    <string name="sudoku_rules">Reguli Sudoku</string>
+    <string name="use_numbers_1_9">Folosiți numerele 1-9</string>
+    <string name="don_t_repeat_any_numbers">Nu repetați niciun număr</string>
+    <string name="don_t_guess">Nu ghiciți</string>
+    <string name="use_process_of_elimination">Utilizați procesul de eliminare</string>
 
 </resources>

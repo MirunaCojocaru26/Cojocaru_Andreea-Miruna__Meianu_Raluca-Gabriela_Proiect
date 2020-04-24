@@ -29,9 +29,7 @@ public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.TimesViewHolde
     @Override
     public void onBindViewHolder(TimesViewHolder holder,int position){
         Time time = timeList.get(position);
-        String pattern = "MM.dd.yyyy";
-        DateFormat df = new SimpleDateFormat(pattern);
-        holder.textViewDate.setText(df.format(time.getDate()));
+        holder.textViewDate.setText(time.getDate());
         holder.textViewTime.setText(time.getTime());
     }
     @Override

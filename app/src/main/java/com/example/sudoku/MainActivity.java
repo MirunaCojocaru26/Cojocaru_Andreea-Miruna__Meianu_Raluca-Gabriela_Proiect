@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static final String Change = "change";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //change theme
         SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         String value_theme = sharedPreferences.getString(Theme,"");
         switch (value_theme){
@@ -40,7 +41,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         super.onCreate(savedInstanceState);
         ActionBar actionBar = getSupportActionBar();
+        setAppLocale(sharedPreferences.getString(Language,""));
         actionBar.setTitle("Main");
+        //play music
         System.out.println(sharedPreferences.getString(Music,""));
         if(sharedPreferences.getString(Music,"").equals("true")){
             if (!isMyServiceRunning(service.class)) {
@@ -52,6 +55,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, TimeActivity.class);
+                startActivity(intent);
+            }
+        });
+        findViewById(R.id.btn_info).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RulesActivity.class);
                 startActivity(intent);
             }
         });
@@ -119,4 +129,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         resources.updateConfiguration(config, dm);
     }
+
 }

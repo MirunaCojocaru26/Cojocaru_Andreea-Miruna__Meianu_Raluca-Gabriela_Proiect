@@ -20,5 +20,17 @@
     <string name="easy">Facile</string>
     <string name="meddium">Meddium</string>
     <string name="hard">Difficile</string>
-    <string name="list_times">List times?????</string>
+
+    <string name="list_times">Répertorier les heures</string>
+
+    <string name="congratulations">Toutes nos félicitations!</string>
+    <string name="completed_time">Temps terminé:</string>
+    <string name="back">Retour</string>
+
+    <string name="sudoku_rules">Règles de Sudoku</string>
+    <string name="use_numbers_1_9">Utilisez les numéros 1-9</string>
+    <string name="don_t_repeat_any_numbers">Ne répétez aucun chiffre</string>
+    <string name="don_t_guess">Ne devinez pas</string>
+    <string name="use_process_of_elimination">Utiliser le processus élimination</string>
+
 </resources>
