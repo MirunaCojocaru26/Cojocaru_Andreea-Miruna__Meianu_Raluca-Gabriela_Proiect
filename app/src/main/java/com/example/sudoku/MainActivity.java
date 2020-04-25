@@ -1,7 +1,7 @@
 package com.example.sudoku;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.ActivityManager;
 import android.content.Context;
@@ -15,6 +15,24 @@ import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+import com.facebook.AccessToken;
+import com.facebook.AccessTokenTracker;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.Arrays;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -23,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static final String Language = "lang";
     public static final String Theme = "theme";
     public static final String Change = "change";
+    private CallbackManager callbackManager;
+    private LoginButton loginButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         changeTheme();
@@ -38,8 +58,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         findViewById(R.id.btn_scors).setOnClickListener(this);
         findViewById(R.id.btn_info).setOnClickListener(this);
-        findViewById(R.id.btn_connect).setOnClickListener(this);
         findViewById(R.id.btn_playgame).setOnClickListener(this);
+
+        loginButton = findViewById(R.id.login_button);
+        callbackManager = CallbackManager.Factory.create();
+        loginButton.setPermissions(Arrays.asList("email", "public_profile"));
+        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+            }
+            @Override
+            public void onCancel() {
+            }
+            @Override
+            public void onError(FacebookException error) {
+            }
+        });
     }
 
     @Override
@@ -68,9 +102,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_scors:
                 startActivity(new Intent(MainActivity.this, TimeActivity.class));
-                break;
-            case R.id.btn_connect:
-                startActivity(new Intent(MainActivity.this, ConnectActivity.class));
                 break;
         }
     }
@@ -112,6 +143,44 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onStart();
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        callbackManager.onActivityResult(requestCode,resultCode,data);
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    AccessTokenTracker accessTokenTracker = new AccessTokenTracker() {
+        @Override
+        protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
+            if(currentAccessToken == null)
+            {
+                getSupportActionBar().setTitle("Sudoku");
+                Toast.makeText(MainActivity.this,"User loged out",Toast.LENGTH_SHORT);
+            }
+            else
+                loadUserProfile(currentAccessToken);
+        }
+    };
+
+    private void loadUserProfile(AccessToken newAccessToken)
+    {
+        GraphRequest graphRequest = GraphRequest.newMeRequest(newAccessToken,new GraphRequest.GraphJSONObjectCallback(){
+            @Override
+            public void onCompleted(JSONObject object, GraphResponse response) {
+                try {
+                    String first_name = object.getString("first_name");
+                    String last_name = object.getString("last_name");
+                    getSupportActionBar().setTitle("Hello "+first_name+" "+last_name+"!");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        Bundle bundle = new Bundle();
+        bundle.putString("fields","first_name, last_name, email,id");
+        graphRequest.setParameters(bundle);
+        graphRequest.executeAsync();
+    }
 
     private void changeTheme(){
         SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);

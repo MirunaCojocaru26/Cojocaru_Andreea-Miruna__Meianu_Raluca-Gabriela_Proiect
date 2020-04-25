@@ -26,7 +26,6 @@
         <activity android:name=".TimeActivity"/>
         <activity android:name=".PopupActivity"
             android:theme="@style/AppTheme.CustomTheme"/>
-        <activity android:name=".ConnectActivity"/>
         <activity android:name=".RulesActivity"/>
         <activity android:name=".ChooseDifficultyFragment"/>
         <activity android:name=".ChronometerFragment"/>
