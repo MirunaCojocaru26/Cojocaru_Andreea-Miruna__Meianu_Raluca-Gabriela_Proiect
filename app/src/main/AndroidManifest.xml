@@ -27,6 +27,7 @@
         <activity android:name=".PopupActivity"
             android:theme="@style/AppTheme.CustomTheme"/>
         <activity android:name=".ConnectActivity"/>
+        <activity android:name=".RulesActivity"/>
         <activity android:name=".ChooseDifficultyFragment"/>
         <activity android:name=".ChronometerFragment"/>
         <activity android:name=".GridFragment"/>
@@ -44,8 +45,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.facebook.FacebookActivity"
-            android:configChanges=
-                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:configChanges= "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
         <service android:name = ".service"/>
     </application>

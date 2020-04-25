@@ -47,12 +47,6 @@ public class RulesActivity  extends AppCompatActivity {
                         SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
                         String lang = sharedPreferences.getString(Language,"");
                         switch (lang){
-                            case "en":
-                                article1 = response.getJSONObject(0).getString("article1");
-                                article2 = response.getJSONObject(0).getString("article2");
-                                article3 = response.getJSONObject(0).getString("article3");
-                                article4 = response.getJSONObject(0).getString("article4");
-                                break;
                             case "ro":
                                 article1 = response.getJSONObject(1).getString("article1");
                                 article2 = response.getJSONObject(1).getString("article2");
@@ -65,7 +59,12 @@ public class RulesActivity  extends AppCompatActivity {
                                 article3 = response.getJSONObject(2).getString("article3");
                                 article4 = response.getJSONObject(2).getString("article4");
                                 break;
-
+                            default:
+                                article1 = response.getJSONObject(0).getString("article1");
+                                article2 = response.getJSONObject(0).getString("article2");
+                                article3 = response.getJSONObject(0).getString("article3");
+                                article4 = response.getJSONObject(0).getString("article4");
+                                break;
                         }
                         setRules();
                     }catch (JSONException e){

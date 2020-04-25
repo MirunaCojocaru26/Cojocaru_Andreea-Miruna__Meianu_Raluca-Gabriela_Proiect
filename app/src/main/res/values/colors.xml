@@ -12,4 +12,8 @@
     <color name="colorBej">#ffeeaa</color>
     <color name="colorWhite">#fff</color>
     <color name="colorBlack">#000</color>
+    <color name="colorGray3">#545454</color>
+    <color name="colorGray2">#737373</color>
+    <color name="colorGray1">#adadad</color>
+
 </resources>

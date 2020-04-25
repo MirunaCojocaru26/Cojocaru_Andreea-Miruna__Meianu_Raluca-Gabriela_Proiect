@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:background="@color/colorBej">
+    android:paddingTop="@dimen/main_button"
+    android:id="@+id/activity_main_principal_id">
 
     <Button
         android:id="@+id/btn_playgame"

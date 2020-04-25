@@ -5,14 +5,11 @@
         android:radius="40dp"/>
     <gradient
         android:angle="45"
-        android:startColor="@color/colorPrimaryDark"
-        android:endColor="@color/colorPrimary"
         android:gradientRadius="@dimen/margin"
+        android:startColor="@color/colorGray2"
+        android:endColor="@color/colorWhite"
         android:type="linear"/>
     <size
         android:height="25dp"
         android:width="50dp"/>
-    <stroke
-        android:width="0.5dp"
-        android:color="@color/colorPrimaryDark"/>
 </shape>

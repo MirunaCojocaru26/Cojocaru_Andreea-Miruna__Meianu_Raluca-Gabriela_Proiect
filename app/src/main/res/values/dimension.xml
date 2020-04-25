@@ -9,4 +9,5 @@
     <dimen name="grid_number_write">20sp</dimen>
     <dimen name="pop_up_text">40sp</dimen>
     <dimen name="photo_facebook">175dp</dimen>
+    <dimen name="main_button">70dp</dimen>
 </resources>

@@ -5,14 +5,11 @@
         android:radius="40dp"/>
     <gradient
         android:angle="45"
-        android:startColor="@color/colorWeed"
-        android:endColor="@color/colorLight"
+        android:startColor="@color/colorBlack"
+        android:endColor="@color/colorWhite"
         android:gradientRadius="@dimen/margin"
         android:type="linear"/>
     <size
         android:height="25dp"
         android:width="80dp"/>
-    <stroke
-        android:width="0.5dp"
-        android:color="@color/colorTree"/>
 </shape>

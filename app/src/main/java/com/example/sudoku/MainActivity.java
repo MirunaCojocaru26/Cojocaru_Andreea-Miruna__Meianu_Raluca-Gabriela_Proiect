@@ -15,7 +15,6 @@ import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -42,7 +41,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setAppLocale(sharedPreferences.getString(Language,""));
         actionBar.setTitle("Main");
         //play music
-        System.out.println(sharedPreferences.getString(Music,""));
         if(sharedPreferences.getString(Music,"").equals("true")){
             if (!isMyServiceRunning(service.class)) {
                 startService(new Intent(MainActivity.this, service.class));
@@ -75,11 +73,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onStart() {
-        System.out.println("intru in onStart");
         SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         String change = sharedPreferences.getString(Change,"");
         if(change.equals("true")){
-            System.out.println("intra in if");
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString(Change, "false");
             editor.apply();
