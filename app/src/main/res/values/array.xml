@@ -12,10 +12,10 @@
     </string-array>
     <string-array name="theme_array_name">
         <item>Dark</item>
-        <item>Red</item>
+        <item>White</item>
     </string-array>
     <string-array name="theme_array_value">
         <item>dark</item>
-        <item>red</item>
+        <item>white</item>
     </string-array>
 </resources>

@@ -12,16 +12,7 @@ public class GameActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-        String value_theme = sharedPreferences.getString(Theme,"");
-        switch (value_theme){
-            case "dark":
-                setTheme(R.style.AppTheme);
-                break;
-            case "red":
-                setTheme(R.style.AppTheme1);
-                break;
-        }
+        changeTheme();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
     }
@@ -31,5 +22,19 @@ public class GameActivity extends AppCompatActivity {
         FragmentManager fm = getSupportFragmentManager();
         ChronometerFragment fragment = (ChronometerFragment) fm.findFragmentById(R.id.chronometer_fragment);
         fragment.stop_chronometer();
+    }
+
+    private void changeTheme(){
+        SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        String value_theme = sharedPreferences.getString(Theme,"");
+        switch (value_theme){
+            case "dark":
+                setTheme(R.style.AppTheme);
+                break;
+            case "white":
+                setTheme(R.style.AppTheme1);
+                break;
+        }
+
     }
 }

@@ -1,8 +1,10 @@
 package com.example.sudoku;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
@@ -23,27 +25,19 @@ public class RulesActivity  extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        //change theme
-        SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-        String value_theme = sharedPreferences.getString(Theme,"");
-        switch (value_theme){
-            case "dark":
-                setTheme(R.style.AppTheme);
-                break;
-            case "red":
-                setTheme(R.style.AppTheme1);
-                break;
-        }
+        changeTheme();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rules);
-
         getRulesFromJson();
+
     }
     public void getRulesFromJson(){
+        final ProgressDialog dialog = ProgressDialog.show(this, null, "Please Wait");
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(urlEn, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-                    try{
+                dialog.dismiss();
+                try{
                         SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
                         String lang = sharedPreferences.getString(Language,"");
                         switch (lang){
@@ -70,11 +64,11 @@ public class RulesActivity  extends AppCompatActivity {
                     }catch (JSONException e){
                         e.printStackTrace();
                     }
-//                adapter.notifyDataSetChanged();
             }
         }, new Response.ErrorListener(){
             @Override
             public void onErrorResponse(VolleyError error){
+                dialog.dismiss();
                 Toast.makeText(getApplicationContext(),"Volley error "+error.getMessage(), Toast.LENGTH_SHORT).show();
                 FragmentManager fm = getSupportFragmentManager();
                 fm.popBackStack();
@@ -92,7 +86,19 @@ public class RulesActivity  extends AppCompatActivity {
         varticle3.setText(article3);
         TextView varticle4 = (TextView)findViewById(R.id.TextViewArticle4);
         varticle4.setText(article4);
+    }
 
+    private void changeTheme(){
+        SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        String value_theme = sharedPreferences.getString(Theme,"");
+        switch (value_theme){
+            case "dark":
+                setTheme(R.style.AppTheme);
+                break;
+            case "white":
+                setTheme(R.style.AppTheme1);
+                break;
+        }
 
     }
 }

@@ -24,17 +24,9 @@ public class SettingsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-        String value_theme = sharedPreferences.getString(Theme,"");
-        switch (value_theme){
-            case "dark":
-                setTheme(R.style.AppTheme);
-                break;
-            case "red":
-                setTheme(R.style.AppTheme1);
-                break;
-        }
+        changeTheme();
         super.onCreate(savedInstanceState);
+        SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         setAppLocale(sharedPreferences.getString(Language,""));
         setContentView(R.layout.activity_settings);
         if(findViewById(R.id.fragment_container) != null){
@@ -64,9 +56,18 @@ public class SettingsActivity extends AppCompatActivity {
         }
         resources.updateConfiguration(config, dm);
     }
+    private void changeTheme(){
+        SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        String value_theme = sharedPreferences.getString(Theme,"");
+        switch (value_theme){
+            case "dark":
+                setTheme(R.style.AppTheme);
+                break;
+            case "white":
+                setTheme(R.style.AppTheme1);
+                break;
+        }
 
-
-
-
+    }
 
 }

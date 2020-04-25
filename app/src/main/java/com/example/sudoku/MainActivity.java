@@ -25,72 +25,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static final String Change = "change";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //change theme
-        SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-        String value_theme = sharedPreferences.getString(Theme,"");
-        switch (value_theme){
-            case "dark":
-                setTheme(R.style.AppTheme);
-                break;
-            case "red":
-                setTheme(R.style.AppTheme1);
-                break;
-        }
+        changeTheme();
         super.onCreate(savedInstanceState);
-        ActionBar actionBar = getSupportActionBar();
-        setAppLocale(sharedPreferences.getString(Language,""));
-        actionBar.setTitle("Main");
+        SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         //play music
+        setAppLocale(sharedPreferences.getString(Language,""));
         if(sharedPreferences.getString(Music,"").equals("true")){
             if (!isMyServiceRunning(service.class)) {
                 startService(new Intent(MainActivity.this, service.class));
             }
         }
         setContentView(R.layout.activity_main);
-        findViewById(R.id.btn_scors).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, TimeActivity.class);
-                startActivity(intent);
-            }
-        });
-        findViewById(R.id.btn_info).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, RulesActivity.class);
-                startActivity(intent);
-            }
-        });
-        findViewById(R.id.btn_connect).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ConnectActivity.class);
-                startActivity(intent);
-            }
-        });
+        findViewById(R.id.btn_scors).setOnClickListener(this);
+        findViewById(R.id.btn_info).setOnClickListener(this);
+        findViewById(R.id.btn_connect).setOnClickListener(this);
         findViewById(R.id.btn_playgame).setOnClickListener(this);
-    }
-
-    @Override
-    protected void onStart() {
-        SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-        String change = sharedPreferences.getString(Change,"");
-        if(change.equals("true")){
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString(Change, "false");
-            editor.apply();
-            finish();
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-        }
-        super.onStart();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main,menu);
         return super.onCreateOptionsMenu(menu);
-
     }
 
     @Override
@@ -104,8 +59,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     @Override
     public void onClick(View v) {
-        ChooseDifficultyFragment fragment = new ChooseDifficultyFragment();
-        getFragmentManager().beginTransaction().add(R.id.fragment_difficulty, fragment,"main_activity_fragment").commit();
+        switch (v.getId()){
+            case R.id.btn_playgame:
+                getFragmentManager().beginTransaction().add(R.id.fragment_difficulty, new ChooseDifficultyFragment(),"main_activity_fragment").commit();
+                break;
+            case R.id.btn_info:
+                startActivity(new Intent(MainActivity.this, RulesActivity.class));
+                break;
+            case R.id.btn_scors:
+                startActivity(new Intent(MainActivity.this, TimeActivity.class));
+                break;
+            case R.id.btn_connect:
+                startActivity(new Intent(MainActivity.this, ConnectActivity.class));
+                break;
+        }
     }
 
 
@@ -129,6 +96,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             config.locale = new Locale(localeCode.toLowerCase());
         }
         resources.updateConfiguration(config, dm);
+    }
+    @Override
+    protected void onStart() {
+        SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        String change = sharedPreferences.getString(Change,"");
+        if(change.equals("true")){
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(Change, "false");
+            editor.apply();
+            finish();
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
+        super.onStart();
+    }
+
+
+    private void changeTheme(){
+        SharedPreferences sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        String value_theme = sharedPreferences.getString(Theme,"");
+        switch (value_theme){
+            case "dark":
+                setTheme(R.style.AppTheme);
+                break;
+            case "white":
+                setTheme(R.style.AppTheme1);
+                break;
+        }
+
     }
 
 }
